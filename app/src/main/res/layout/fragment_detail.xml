@@ -7,6 +7,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <LinearLayout
+        android:padding="16dp"
         android:orientation="vertical"
         android:layout_height="match_parent"
         android:layout_width="match_parent">
@@ -15,38 +16,40 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Today"
-            android:padding="16dp"
-            android:id="@+id/list_item_date_textview"/>
+
+            android:id="@+id/detail_day_textview"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="June 24"
-            android:padding="16dp"
-            android:id="@+id/list_item"/>
+
+            android:id="@+id/detail_date_textview"/>
         <LinearLayout
+            android:layout_marginTop="16dp"
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <LinearLayout
+
                 android:orientation="vertical"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1">
 
                 <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="21"
-                    android:padding="16dp"
-                    android:id="@+id/list_item_high_textview"/>
+
+                    android:id="@+id/detail_high_textview"/>
 
                 <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="8"
-                    android:padding="16dp"
-                    android:id="@+id/list_item_low_textview"/>
+
+                    android:id="@+id/detail_low_textview"/>
 
                 </LinearLayout>
 
@@ -54,21 +57,21 @@
                 android:orientation="vertical"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
                 android:layout_weight="1">
 
                 <ImageView
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_launcher"
-                    android:id="@+id/list_item_icon"
+                    android:id="@+id/detail_icon"
                     />
                 <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:padding="16dp"
                     android:text="Clear"
-                    android:gravity="center_horizontal"
-                    android:id="@+id/list_item_forecast_textview"/>
+
+                    android:id="@+id/detail_forecast_textview"/>
 
                 </LinearLayout>
 
@@ -79,18 +82,21 @@
             android:layout_height="wrap_content"
             android:padding="16dp"
             android:text="Humidty : 84% "
+            android:id="@+id/detail_humidty_textview"
             />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="16dp"
             android:text="Wind : 6KM/h NW : 84% "
+            android:id="@+id/detail_wind_textview"
             />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="16dp"
             android:text="Pressure : 1014 hpaa "
+            android:id="@+id/detail_pressure_textview"
             />
 
     </LinearLayout>
