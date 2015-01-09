@@ -6,17 +6,22 @@
     android:layout_height="wrap_content"
     android:gravity="center_vertical"
     android:minHeight="?android:attr/listPreferredItemHeight"
-    android:padding="16dp"
+
     android:background="@drawable/touch_selector"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:weightSum="1">
 
-    <ImageView
-        android:id="@+id/list_item_icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="0"
-        android:padding="16dp"/>
+    <FrameLayout
+        android:layout_width="60dp"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/list_item_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            />
+
+    </FrameLayout>
 
     <LinearLayout
         android:orientation="vertical"
@@ -27,31 +32,37 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
-            android:id="@+id/list_item_date_textview" />
+            android:fontFamily="san-serif-condensed"
+            android:id="@+id/list_item_date_textview"
+            android:textAppearance="?android:textAppearanceLarge"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
-            android:id="@+id/list_item_forecast_textview" />
+            android:fontFamily="san-serif-condensed"
+            android:id="@+id/list_item_forecast_textview"
+            android:textAppearance="?android:textAppearanceSmall"/>
     </LinearLayout>
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="0">
+        android:layout_weight="1"
+        android:paddingRight="32dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textAppearance="?android:textAppearanceLarge"
+            android:fontFamily="sans-serif-condensed"
             android:id="@+id/list_item_high_textview" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
+            android:textAppearance="?android:textAppearanceSmall"
+            android:fontFamily="sans-serif-condensed"
             android:id="@+id/list_item_low_textview" />
     </LinearLayout>
 

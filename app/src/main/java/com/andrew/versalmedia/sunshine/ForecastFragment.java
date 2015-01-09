@@ -31,6 +31,7 @@ import java.util.Date;
 public class ForecastFragment extends Fragment implements LoaderCallbacks<Cursor> {
 
     private ForecastAdapter mForecastAdapter;
+    private boolean mUseTodayLayout;
 
     private static final int FORECAST_LOADER = 0;
     private String mLocation;
@@ -86,6 +87,12 @@ public class ForecastFragment extends Fragment implements LoaderCallbacks<Cursor
     public ForecastFragment() {
     }
 
+    public void setUseTodayLayout(boolean useTodayLayout){
+        mUseTodayLayout = useTodayLayout;
+        if(mForecastAdapter != null) {
+            mForecastAdapter.setUseTodayLayout(mUseTodayLayout);
+        }
+    }
     @Override
     public void onSaveInstanceState(Bundle outState) {
         if (mPosition != ListView.INVALID_POSITION) {
@@ -128,6 +135,7 @@ public class ForecastFragment extends Fragment implements LoaderCallbacks<Cursor
         // use it to populate the ListView it's attached to.
         mForecastAdapter = new ForecastAdapter(getActivity(), null, 0);
 
+
         View rootView = inflater.inflate(R.layout.fragment_main, container, false);
 
         // Get a reference to the ListView, and attach this adapter to it.
@@ -150,6 +158,8 @@ public class ForecastFragment extends Fragment implements LoaderCallbacks<Cursor
         if(savedInstanceState != null && savedInstanceState.containsKey(SELECTED_KEY)){
             mPosition = savedInstanceState.getInt(SELECTED_KEY);
         }
+
+        mForecastAdapter.setUseTodayLayout(mUseTodayLayout);
 
         return rootView;
     }
